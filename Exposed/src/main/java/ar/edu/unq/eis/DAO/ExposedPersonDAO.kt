@@ -1,6 +1,7 @@
 package ar.edu.unq.eis.DAO
 
 import org.jetbrains.exposed.sql.SizedCollection
+import org.jetbrains.exposed.sql.or
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class ExposedPersonDAO : PersonDAO {
@@ -32,12 +33,11 @@ class ExposedPersonDAO : PersonDAO {
         this.readPersonByDni(dni).delete()
         this.deletePetsOf(dni)
     }
-    override fun readPersonByLastname(lastname : String) : Person{
-        val tempPerson = Person.find { Persons.lastname eq lastname }
-        return tempPerson.first()
+    override fun readPersonsByLastname(search : String) : MutableCollection<Person>{
+        val tempPerson = Person.find { Persons.lastname like search+"%" or (Persons.name like search+"%")}
+        return tempPerson.toMutableList();
     }
-
-    fun readPersonByDni(dni : Int) : Person{
+    override fun readPersonByDni(dni : Int) : Person{
         val tempPerson = Person.find { Persons.dni eq dni }
         return tempPerson.first()
     }

@@ -11,7 +11,9 @@ interface PersonDAO {
 
     fun deletePerson(dni : Int)
 
-    fun readPersonByLastname(lastname : String) : Person
+    fun readPersonsByLastname(lastname : String) : MutableCollection<Person>
+
+    fun readPersonByDni(dni : Int) : Person
 
     fun readPetsOf(dni : Int) : ArrayList<Pet>
 
