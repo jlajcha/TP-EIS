@@ -2,6 +2,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import io.javalin.Context
 import io.javalin.NotFoundResponse
 import org.eclipse.jetty.http.HttpStatus
+import modelo.Client
+
 
 data class LittleUser(var id : String, var password : String)
 data class PseudoUser(val id : String, val name : String, var password : String, var address : String , var longitude : Double, var latitude : Double , val email : String)
@@ -15,11 +17,11 @@ data class DataClient(@JsonIgnore val client : Client){
     }
 
 //hay que agregar la VeteApp
-class PersonController {
+class ClientController {
     val veteApp = VeteApp
 
 
-    fun addUser(ctx: Context) {
+    fun addClient(ctx: Context) {
         val client = ctx.body<PseudoUser>()
         val dni = client.dni
         try {

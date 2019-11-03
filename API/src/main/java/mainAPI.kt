@@ -20,10 +20,10 @@ fun main() {
     app.get("/") { ctx -> ctx.json(mapOf("message" to " Welcome to MorfApp ~ Online ")) }
 
 
-    val controller = PersonController()
+    val controller = ClientController()
     app.routes {
-        path("login_user") {
-            post(controller::loginUser)
+        path("add_client") {
+            post(controller::addClient)
         }
     }
 
