@@ -5,8 +5,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/.idea/artifacts/Modelo_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Modelo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Modelo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Modelo/src/main/java/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Modelo/src/main/java/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/out/artifacts/Modelo_jar/Modelo.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/src/main/java/Client.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/src/main/java/Pet.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/src/main/java/Visit.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/Modelo-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/classes/Client$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/classes/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/classes/META-INF/Modelo.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/classes/Pet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/classes/Visit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Modelo/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+            <state relative-caret-position="240">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -41,10 +60,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ClientController.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="120">
+              <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
               <folding>
-                <element signature="e#0#173#0" expanded="true" />
+                <element signature="e#0#152#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,52 +114,26 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="683" />
+    <option name="x" value="682" />
     <option name="width" value="684" />
     <option name="height" value="741" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="API" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="API" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="API" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="API" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="API" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="API" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="API" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="API" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572745125319" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../1 cuatri 2019/INTERFACES/1306 INTERFACES ULTIMMO/2019s1-Grupo09-nombrePendiente" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../model" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -168,9 +161,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="683" y="0" width="684" height="741" extended-state="4" />
+    <frame x="682" y="0" width="684" height="741" extended-state="4" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08176101" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.083333336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -191,11 +185,15 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.047169812" />
+      <window_info active="true" anchor="right" id="Maven" order="4" visible="true" weight="0.1808176" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/API.iml" />
@@ -210,18 +208,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ClientController.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="120">
+          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
           <folding>
-            <element signature="e#0#173#0" expanded="true" />
+            <element signature="e#0#152#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+        <state relative-caret-position="240">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
         </state>
       </provider>
     </entry>

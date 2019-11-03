@@ -2,7 +2,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import io.javalin.Context
 import io.javalin.NotFoundResponse
 import org.eclipse.jetty.http.HttpStatus
-import modelo.Client
+import Client
 //hacer el jar para esta mierda
 
 data class LittleUser(var id : String, var password : String)
