@@ -19,7 +19,6 @@ data class PseudoUser(val name : String,
 class ClientController {
     val veteApp = VeteApp
 
-
     fun addClient(ctx: Context) {
         val client = ctx.body<PseudoUser>()
         val dni = client.dni
