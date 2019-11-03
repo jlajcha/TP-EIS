@@ -6,15 +6,14 @@ import Client
 //hacer el jar para esta mierda
 
 data class LittleUser(var id : String, var password : String)
-data class PseudoUser(val id : String, val name : String, var password : String, var address : String , var longitude : Double, var latitude : Double , val email : String)
+data class PseudoUser(val name : String,
+                      var surname:String,
+                      var address : String ,
+                      val email : String,
+                      var telephone: String,
+                      var dni: String,
+                      var pets:MutableCollection<Any>)
 //aca este object tiene que ser tipo Client
-data class DataClient(@JsonIgnore val client : Client){
-    val dni = client.dni
-    val name = client.id
-    var address = client.address
-    val email = client.email
-//    var pets = mutableListOf<PetData>()
-    }
 
 //hay que agregar la VeteApp
 class ClientController {

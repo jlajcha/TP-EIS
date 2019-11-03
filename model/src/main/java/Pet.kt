@@ -1,2 +1,6 @@
-class Pet(name:String, type:String, age:Int, notes:String, clinicalHistory: MutableCollection<Visit>) {
+class Pet(var name:String,
+          var type:String,
+          var age:Int,
+          var notes:String,
+          var clinicalHistory: MutableCollection<Visit>) {
 }
