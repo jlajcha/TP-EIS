@@ -1,0 +1,88 @@
+.containerForm{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+.formRegister{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 2%;
+    width: 70vw;
+    margin-top: 2%;
+}
+
+.rowfilds{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+ .fieldForm, .submitRegister{
+    padding: 1.5%;
+    margin-top: 3%;
+    border-radius: 10px;
+    border: 1px solid #222222;
+}
+
+.fieldForm{
+    color: rgb(218, 214, 214);
+    background: beige;
+    width: 45%;
+}
+
+.submitRegister{
+    background: rgba(115, 194, 25, 0.9);
+    width: 30%;
+    color: #111111;
+}
+
+.submitRegister:hover{
+    background: rgba(188, 255, 110, 0.911);
+}
+
+.titleForm{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.mascotas{
+    text-align: left;
+    margin-top: 2%;
+    width: 90%;
+    font-size: 1rem;
+    
+}
+
+.containerPet{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #222222;
+    border-top: 1px solid #222222;
+    width: 90%;
+    padding: 1%;
+}
+
+.textForm {
+    border-style: dashed;
+    padding: 1%;
+}
+
+.addPet {
+    padding: 0.8%;
+    border-radius: 8px;
+    border: 1px solid #222222;
+    width: 15%;
+}
