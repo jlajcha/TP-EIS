@@ -1,84 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/ClientController.kt" line="69" mnemonic="7" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="0626bbb0-f084-4465-a772-9c98e2749888" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Exposed/.idea/artifacts/Exposed_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exposed/Exposed.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../model/src/main/java/MainMariano.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../model/model.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ClientControllerKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DataClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/API.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$main$2$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$main$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$main$app$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt$sam$io_javalin_Handler$0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MainAPIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mainAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mainAPI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/.idea/artifacts/model_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../model/.idea/artifacts/model_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../model/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/.idea/encodings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../model/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../model/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/out/artifacts/model_jar/model.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../model/out/artifacts/model_jar/model.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../model/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/src/main/java/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../model/src/main/java/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/src/main/java/MainMariano.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/src/main/java/Pet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../model/src/main/java/Pet.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/src/main/java/VeteApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../model/src/main/java/VeteApp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/Client$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/META-INF/model.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/Pet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/VeteApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/classes/Visit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/src/main/java/Visit.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../model/src/main/java/Visit.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../model/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mainAPI.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-              <folding>
-                <element signature="e#1#192#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ClientController.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="68" column="3" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#152#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,53 +49,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/PersonController.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/mainAPI.kt" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ClientController.kt" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="API" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="API" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="682" />
-    <option name="width" value="660" />
-    <option name="height" value="737" />
-  </component>
+  <component name="ProjectId" id="1TAKPeiCC8DZNE7e9ImaV4QH0Xy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572795544749" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../model/model.jar!/" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -186,73 +105,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572302714744</updated>
+      <workItem from="1572897440537" duration="2555000" />
+      <workItem from="1572904133695" duration="4305000" />
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.022727273" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7287879" visible="true" weight="0.32956383" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.27121213" side_tool="true" visible="true" weight="0.3279483" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49924242" weight="0.32956383" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info active="true" anchor="right" id="Maven" order="4" visible="true" weight="0.11363637" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/API.iml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainAPI.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-          <folding>
-            <element signature="e#1#192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ClientController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="68" column="3" lean-forward="true" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
