@@ -17,7 +17,7 @@ fun main() {
                 ))
             }
             .start(7000)
-    app.get("/") { ctx -> ctx.json(mapOf("message" to " Welcome to MorfApp ~ Online ")) }
+    app.get("/") { ctx -> ctx.json(mapOf("message" to " Welcome to VetApp ~ Online ")) }
 
 
     val controller = ClientController()
@@ -26,5 +26,4 @@ fun main() {
             post(controller::addClient)
         }
     }
-
-    }
+}
