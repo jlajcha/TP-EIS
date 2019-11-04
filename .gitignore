@@ -1,0 +1,9 @@
+# IntelliJ
+.idea/
+/Exposed/.idea/
+/model/.idea/
+/model/out/
+/Exposed/out/
+
+# Maven
+target/
