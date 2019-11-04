@@ -1,7 +1,6 @@
 import React    from "react";
 import {register} from "../Api";
 import                  '../css/loginStyles.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Register  extends React.Component{
 

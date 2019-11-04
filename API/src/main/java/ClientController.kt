@@ -2,7 +2,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import io.javalin.Context
 import io.javalin.NotFoundResponse
 import org.eclipse.jetty.http.HttpStatus
-import Client
+
 
 //hacer el jar para esta mierda
 
@@ -11,24 +11,22 @@ data class DataClient(val name : String,
                       var address : String ,
                       val email : String,
                       var telephone: String,
-                      var dni: String,
-                      var pets:MutableCollection<Pet>)
+                      var dni: String)
 //aca este object tiene que ser tipo Client
 
-//hay que agregar la VeteApp
+//solo crea el cliente sin los animales que tiene
 class ClientController {
-    val veteApp = VeteApp
+    //val veteApp = VeteApp
 
     fun addClient(ctx: Context) {
         val client = ctx.body<DataClient>()
-        val dni = client.dni
   //      try {
     //        validate(dni)
       //  } catch (e: Error) {
         //    throw NotFoundResponse(e.message as String)
         //}
 
-        val newUser = veteApp.createClient(client.dni, client.name,client.surname, client.address, client.email, client.telephone)
+        val newUser = Client(client.dni, client.name,client.surname, client.address, client.email, client.telephone)
         ctx.status(HttpStatus.CREATED_201)
         ctx.json(addDataUser(newUser))
     }
@@ -52,8 +50,20 @@ class ClientController {
 
 
     fun addDataUser(client : Client) : DataClient{
-        val pets:MutableCollection<Pet> = mutableListOf<Pet>()
-        val dataUser = DataClient(client.name,client.surnanme,client.address,client.email,client.telephone,client.dni, pets)
+        //val pets:MutableCollection<Pet> = mutableListOf<Pet>()
+        val dataUser = DataClient(client.name,client.surnanme,client.address,client.email,client.telephone,client.dni)
        // users.put(dataUser.id, dataUser)
         return dataUser
     }
+
+
+//en postman el post en la ruta localhost:7000/add_client con el siguiente jason en el body .   
+/*{
+
+    "name": "Clark",
+    "surname":"Kent",
+    "address": "Calle falsa 123",
+    "email":"superman@mail.com",
+    "telephone":"12221212",
+    "dni":"355572834"
+}*/
