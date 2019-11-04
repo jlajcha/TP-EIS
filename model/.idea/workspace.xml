@@ -7,18 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed945847-9820-4c02-a642-406b69d223a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/java/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/ClientController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Exposed/.idea/artifacts/Exposed_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VeteApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VeteApp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/model.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Pet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VeteApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Visit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
+>>>>>>> 2b4312b488266f208efb2dedcb2490e6ba7312d9
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -67,36 +81,36 @@
         </entry>
       </file>
     </leaf>
+=======
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+>>>>>>> 2b4312b488266f208efb2dedcb2490e6ba7312d9
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Visit.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/Pet.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/Client.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/VeteApp.kt" />
-      </list>
-    </option>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="682" />
     <option name="width" value="668" />
     <option name="height" value="741" />
   </component>
+  <component name="ProjectId" id="1T6xAtZ0Ubh1PLCUyX8A0e0PDB1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -107,12 +121,17 @@
       <pane id="ProjectPane" />
     </panes>
   </component>
+=======
+>>>>>>> 2b4312b488266f208efb2dedcb2490e6ba7312d9
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572790528649" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../API" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Exposed/Exposed.jar!/" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,6 +145,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="MainMarianoKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainMarianoKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainMarianoKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -136,9 +175,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572786937087</updated>
+      <workItem from="1572794210330" duration="1897000" />
+      <workItem from="1572796120460" duration="3227000" />
+      <workItem from="1572799652946" duration="4614000" />
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="741" extended-state="6" />
     <layout>
@@ -312,5 +355,22 @@
         </settings>
       </state>
     </states>
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 2b4312b488266f208efb2dedcb2490e6ba7312d9
   </component>
 </project>
