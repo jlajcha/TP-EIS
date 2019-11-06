@@ -20,10 +20,15 @@ fun main() {
     app.get("/") { ctx -> ctx.json(mapOf("message" to " Welcome to VetApp ~ Online ")) }
 
 
-    val controller = ClientController()
+    val clientController = ClientController()
+    val petController = PetController()
+
     app.routes {
         path("add_client") {
-            post(controller::addClient)
+            post(clientController::addClient)
+        }
+        path("add_pet"){
+            post(clientController::addPet)
         }
     }
 }

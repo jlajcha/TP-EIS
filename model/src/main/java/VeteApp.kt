@@ -1,13 +1,13 @@
-import ar.edu.unq.eis.DAO.ConnectionBlock
-import ar.edu.unq.eis.DAO.ExposedPersonDAO
-import ar.edu.unq.eis.DAO.PersonDAO
+import ar.edu.unq.eis.DAO.*
 import org.jetbrains.exposed.exceptions.ExposedSQLException
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.lang.Exception
+import Pet
 
 object VeteApp {
     val db = ConnectionBlock()
     val personDAO : PersonDAO = ExposedPersonDAO()
+    val petDao: PetDAO = ExposedPetDAO()
 
     fun createClient(dni:Int,
                      name:String,
@@ -24,5 +24,20 @@ object VeteApp {
             throw (e as ExposedSQLException)
         }
         return Client(name, lastname,address, email, telephone, dni)
+    }
+    fun createPet(name:String,ownerDni:Int,notes:String):Pet{
+
+        try {
+            transaction {
+                petDao.createPet(ownerDni,name, notes)
+
+            }
+        }catch (e : Exception){
+            throw (e as ExposedSQLException)
+        }
+
+        return  Pet(name,ownerDni,notes)
+
+
     }
 }

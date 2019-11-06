@@ -8,6 +8,11 @@ data class DataClient(val name : String,
                       var telephone: String,
                       var dni: Int)
 
+//la idea es que la notas pueda agregar cosas relevantes del bicho
+data class DataPet(var petName:String,
+                   var ownerDni: Int,
+                   var notes:String )
+
 class ClientController {
     val veteApp = VeteApp
 
@@ -21,6 +26,12 @@ class ClientController {
                              client.address,
                              client.email,
                              client.telephone)
+        ctx.status(HttpStatus.CREATED_201)
+    }
+
+    fun addPet(ctx: Context){
+        val pet= ctx.body<DataPet>()
+            veteApp.createPet(pet.petName,pet.ownerDni,pet.notes)
         ctx.status(HttpStatus.CREATED_201)
     }
 }

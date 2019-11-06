@@ -11,3 +11,4 @@ class ConnectionBlock {
         return this.db
     }
 }
+
