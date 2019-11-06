@@ -21,8 +21,7 @@ fun main() {
 
 
     val clientController = ClientController()
-    val petController = PetController()
-
+    
     app.routes {
         path("add_client") {
             post(clientController::addClient)

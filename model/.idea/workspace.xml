@@ -9,15 +9,6 @@
     <list default="true" id="5a59b53a-b85a-4aa1-b057-06bb285b9e0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../API/src/main/java/ClientController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/ClientController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/src/main/java/mainAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../API/src/main/java/mainAPI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exposed/src/main/java/ar/edu/unq/eis/DAO/ConnectionBlock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Exposed/src/main/java/ar/edu/unq/eis/DAO/ConnectionBlock.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/model_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/model_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/model_jar/model.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pet.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pet.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VeteApp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VeteApp.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

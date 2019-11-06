@@ -45,3 +45,12 @@ class ClientController {
     "telephone":"12221212",
     "dni":"355572834"
 }*/
+
+//para agregar una mascota post localhost:7000/add_pet
+
+/*	{
+    "petName": "Robin",
+    "ownerDni":123456,
+    "notes": "es un buen gato"
+    }
+ */
