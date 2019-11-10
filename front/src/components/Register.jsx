@@ -1,6 +1,29 @@
 import React    from "react";
-import {register} from "../Api";
+import {register, addPet} from "../Api";
 import                  '../css/loginStyles.css';
+import                  '../css/popupStyeles.css';
+
+/************************************ Componente PopUp *************************************/
+
+class Popup extends React.Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className='popup'>
+                <div className='popup_inner'>
+                    {this.props.form}
+                </div>
+            </div>
+        );
+        }
+  }
+
+
+  /***********************************************************************************************/
 
 export default class Register  extends React.Component{
 
@@ -14,7 +37,8 @@ export default class Register  extends React.Component{
                 tel: '',
                 address: '',
                 mail:'',
-                pets: []
+                pets: [],
+                showPopup: false,
                     };
         
         this.changeFirstName = this.changeFirstName.bind(this);
@@ -24,8 +48,12 @@ export default class Register  extends React.Component{
         this.changeAddress = this.changeAddress.bind(this);
         this.changeMail = this.changeMail.bind(this);
         this.register = this.register.bind(this)
-        
+
+        this.togglePopup = this.togglePopup.bind(this);   
     }
+
+    componentWillMount(){this.setState({showPopup: false})}
+
     changeFirstName(event){
         this.setState( {firstName: event.target.value} )        
     }
@@ -46,20 +74,72 @@ export default class Register  extends React.Component{
     }
 
     register() {
-          const body = {
+        const body = {
             dni : this.state.dni,
             name: this.state.firstName,
             surname: this.state.lastName,
             address: this.state.address,
             email: this.state.mail,
             telephone: this.state.tel,
-          };
-          register(body)
-            .then(() => this.setState({ toHome: true }))
+        };
+        register(body)
+            .then(() => this.setState({ toHome: true}))
             .catch(() => this.setState({ error: 'Usuario ya utilizado' }));  
         }
       
-        
+    addPet(){
+        const body = {
+            petName: this.state.petName,
+            ownerDni: this.state.dni,
+            notes: this.state.notes,
+        };
+        addPet(body);
+    }
+
+    /********************************* Manipulación del Pop-Up ********************************/
+
+    createContentPopUp(){
+        return (
+            <div className=''>
+              {this.state.showPopup ? 
+                <Popup
+                  form={this.createRegistrationPet()}
+                />
+                : null
+              }
+            </div>
+          );
+    }
+
+    createRegistrationPet(){
+        return (
+            <div>
+                <form className="formPet">
+                    <p>Nueva mascota</p>
+                    <div className="rowfilds">
+                    {/* Falta value y onChange */}
+                        <input type="text" name="namePet" className="fieldForm " placeholder="Nombre del animal"/>                     
+                        <input type="text" name ="lastName" className = "fieldForm"  placeholder="DNI del dueño"/>      
+                    </div>
+                    <textarea className="notes" name="notes" rows="6" cols="50" placeholder="Historia clínica"></textarea> 
+                    <div className="rowfilds">
+                        <button onClick={() => this.togglePopup()}>Cancelar</button>
+                        <button type = "button" className = "savePet" onClick ={ () => this.addPet }>Guardar </button>
+                    </div>
+                        
+                </form>
+            </div>
+        );
+    }
+
+   
+    togglePopup() {
+        this.setState({ showPopup: !this.state.showPopup });
+   }
+
+
+    /**********************************************************************************************/
+
     render(){
         
         return(
@@ -67,25 +147,23 @@ export default class Register  extends React.Component{
                     <form  className="formRegister">
                         <p className="titleForm">Registrar cliente</p>
                         <div className="rowfilds">
-                            <input type="text" color="#000000" name="firstName" className="fieldForm "  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
+                            <input type="text" name="firstName" className="fieldForm "  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
                             <input type="text" name ="lastName" className = "fieldForm"  value={this.state.lastName} onChange={this.changeLastName} placeholder="Apellido"/>          
-                            </div>
+                        </div>
                         <div className="rowfilds">
-                            <input type="text" name ="dni"  className="fieldForm" value={this.state.dni} onChange={this.changeDni}placeholder="DNI"/> 
+                            <input type="text" name ="dni"  className="fieldForm" value={this.state.dni} onChange={this.changeDni} placeholder="DNI"/> 
                             <input type="text" name ="tel" className="fieldForm" value={this.state.tel} onChange={this.changeTel} placeholder="Tel."/>
                             </div>
                         <div className="rowfilds">
                             <input type="text" name ="address" className="fieldForm" value={this.state.address} onChange={this.changeAddress} placeholder="Domicilio"/>
                             <input type="text" name ="mail" className="fieldForm" value={this.state.mail} onChange={this.changeMail} placeholder="Mail"/>
                         </div>
-                        {/* <p>{this.state.error}</p> */}
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
-                            <p className="textForm">Sin mascotas</p>
-                            <button className="addPet">Agregar</button>
+                            {this.createContentPopUp()}
+                            <button className="addPet" onClick={() => this.togglePopup()}>Agregar</button>
                         </div>
-                        <button type = "button" className = "btn btn-primary btn.block" onClick ={ this.register }>Registrar </button>
-                        
+                        <button type = "button" className = "" onClick ={ () => this.register }>Registrar </button>
                     </form>
                 </div>
             

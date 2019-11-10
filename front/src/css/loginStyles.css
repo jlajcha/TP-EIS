@@ -22,7 +22,6 @@
 
 .rowfilds{
     display: flex;
-    color: black;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
@@ -40,6 +39,10 @@
     color: rgb(218, 214, 214);
     background:darkcyan;
     width: 45%;
+}
+
+::placeholder{
+    color: rgb(218, 214, 214);
 }
 
 .submitRegister{
@@ -87,4 +90,27 @@
     border-radius: 8px;
     border: 1px solid #222222;
     width: 15%;
+}
+
+.formPet{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes{
+    margin-top: 2%;
+    align-self: center;
+    width: 95%;
+    background: lightsteelblue;
+    color: #222222;
+}
+
+.notes::placeholder{
+    color: #777777;
+
+}
+
+.savePet{
 }

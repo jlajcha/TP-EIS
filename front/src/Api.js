@@ -7,4 +7,4 @@ const request = (type, path, body) => axios
   .then(req => req.data);
 
 export const register = body => request('post', '/add_client', body);
-
+export const addPet = body => request('post','/add_pet', body);
