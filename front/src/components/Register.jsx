@@ -39,6 +39,8 @@ export default class Register  extends React.Component{
                 mail:'',
                 pets: [],
                 showPopup: false,
+                petName: '',
+                notes: '',
                     };
         
         this.changeFirstName = this.changeFirstName.bind(this);
@@ -52,7 +54,10 @@ export default class Register  extends React.Component{
         this.togglePopup = this.togglePopup.bind(this);   
     }
 
-    componentWillMount(){this.setState({showPopup: false})}
+    changeUserProperty(property, value) {
+        let prevUser = this.state.user;
+            this.setState({ user : { ...prevUser, [property]: value } });
+    }
 
     changeFirstName(event){
         this.setState( {firstName: event.target.value} )        
@@ -133,8 +138,9 @@ export default class Register  extends React.Component{
     }
 
    
-    togglePopup() {
-        this.setState({ showPopup: !this.state.showPopup });
+    togglePopup(event) {
+        this.setState({ showPopup: event });
+        console.log(event);
    }
 
 
@@ -161,7 +167,7 @@ export default class Register  extends React.Component{
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
                             {this.createContentPopUp()}
-                            <button className="addPet" onClick={() => this.togglePopup()}>Agregar</button>
+                            <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>Agregar</button>
                         </div>
                         <button type = "button" className = "" onClick ={ () => this.register }>Registrar </button>
                     </form>
