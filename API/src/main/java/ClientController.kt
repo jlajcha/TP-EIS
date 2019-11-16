@@ -27,6 +27,7 @@ class ClientController {
                              client.email,
                              client.telephone)
         ctx.status(HttpStatus.CREATED_201)
+
     }
 
     fun addPet(ctx: Context){
