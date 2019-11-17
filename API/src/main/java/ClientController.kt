@@ -1,6 +1,7 @@
 import io.javalin.Context
 import org.eclipse.jetty.http.HttpStatus
 
+data class DataDni(val dni: Int)
 data class DataClient(val name : String,
                       var surname:String,
                       var address : String ,
@@ -34,6 +35,12 @@ class ClientController {
             veteApp.createPet(pet.petName,pet.ownerDni,pet.notes)
         ctx.status(HttpStatus.CREATED_201)
     }
+
+    fun getPetsByDni(ctx:Context){
+        val dni = ctx.body<DataDni>()
+        veteApp.getOwnersPets(dni.dni)
+        ctx.status(HttpStatus.OK_200)
+    }
 }
 //en postman el post en la ruta localhost:7000/add_client con el siguiente jason en el body .   
 /*{
@@ -53,4 +60,16 @@ class ClientController {
     "ownerDni":123456,
     "notes": "es un buen gato"
     }
+ */
+
+
+/*localhost:7000/pets_by_dni
+para buscar los pets del dueño
+
+    {
+        "dni": 24543234
+
+    }
+
+
  */

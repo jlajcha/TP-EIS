@@ -40,4 +40,18 @@ object VeteApp {
 
 
     }
+
+    fun getOwnersPets(ownerDni: Int): ArrayList<ar.edu.unq.eis.DAO.Pet>{
+        var pets: ArrayList<ar.edu.unq.eis.DAO.Pet> = arrayListOf<ar.edu.unq.eis.DAO.Pet>()
+        try {
+            transaction {
+                pets = personDAO.readPetsOf(ownerDni)
+
+            }
+        }catch (e : Exception){
+            throw (e as ExposedSQLException)
+        }
+
+        return  pets
+    }
 }
