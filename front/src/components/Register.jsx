@@ -1,5 +1,6 @@
 import React    from "react";
-import {register, addPet} from "../Api";
+import {register} from "../Api";
+import {addPet} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
 
@@ -52,11 +53,10 @@ export default class Register  extends React.Component{
         this.register = this.register.bind(this)
 
         this.togglePopup = this.togglePopup.bind(this);   
-    }
 
-    changeUserProperty(property, value) {
-        let prevUser = this.state.user;
-            this.setState({ user : { ...prevUser, [property]: value } });
+        this.changeNameAnimal = this.changeNameAnimal.bind(this);
+        this.changeNotes = this.changeNotes.bind(this);
+        this.changeDniOwner = this.changeDniOwner.bind(this)
     }
 
     changeFirstName(event){
@@ -78,27 +78,43 @@ export default class Register  extends React.Component{
         this.setState( {mail: event.target.value} )
     }
 
+    changeNameAnimal(event){
+        this.setState( {petName: event.target.value} )
+    }
+
+    changeDniOwner(event){
+        this.setState( {dni: event.target.value} )
+    }
+
+    changeNotes(event){
+        this.setState( {notes: event.target.value} )
+    }
+
     register() {
-        const body = {
+          const body = {
             dni : this.state.dni,
             name: this.state.firstName,
             surname: this.state.lastName,
             address: this.state.address,
             email: this.state.mail,
             telephone: this.state.tel,
-        };
-        register(body)
-            .then(() => this.setState({ toHome: true}))
+          };
+          register(body)
+            .then(() => this.setState({ toHome: true }))
             .catch(() => this.setState({ error: 'Usuario ya utilizado' }));  
         }
+
+
       
-    addPet(){
+    addPets(){
         const body = {
             petName: this.state.petName,
             ownerDni: this.state.dni,
             notes: this.state.notes,
         };
-        addPet(body);
+        addPet(body)
+            .then(() => this.setState({ toHome: true }))
+            .catch(() => this.setState({ error: 'Usuario ya utilizado' })); 
     }
 
     /********************************* Manipulación del Pop-Up ********************************/
@@ -122,14 +138,13 @@ export default class Register  extends React.Component{
                 <form className="formPet">
                     <p>Nueva mascota</p>
                     <div className="rowfilds">
-                    {/* Falta value y onChange */}
-                        <input type="text" name="namePet" className="fieldForm " placeholder="Nombre del animal"/>                     
-                        <input type="text" name ="lastName" className = "fieldForm"  placeholder="DNI del dueño"/>      
+                        <input type="text" name="namePet" className="fieldForm " placeholder="Nombre del animal" value={this.state.petName} onChange={this.changeNameAnimal}/>                     
+                        <input type="text" name ="lastName" className = "fieldForm"  placeholder="DNI del dueño" value={this.state.dni} onChange={this.changeDniOwner}/>      
                     </div>
-                    <textarea className="notes" name="notes" rows="6" cols="50" placeholder="Historia clínica"></textarea> 
+                    <textarea className="notes" name="notes" rows="6" cols="50" placeholder="Historia clínica" onChange={this.changeNotes}></textarea> 
                     <div className="rowfilds">
                         <button onClick={() => this.togglePopup()}>Cancelar</button>
-                        <button type = "button" className = "savePet" onClick ={ () => this.addPet }>Guardar </button>
+                        <button type = "button" className = "savePet" onClick ={ () => this.addPets() }>Guardar </button>
                     </div>
                         
                 </form>
@@ -140,7 +155,6 @@ export default class Register  extends React.Component{
    
     togglePopup(event) {
         this.setState({ showPopup: event });
-        console.log(event);
    }
 
 
@@ -169,7 +183,7 @@ export default class Register  extends React.Component{
                             {this.createContentPopUp()}
                             <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>Agregar</button>
                         </div>
-                        <button type = "button" className = "" onClick ={ () => this.register }>Registrar </button>
+                        <button type = "button" className = "" onClick={() => this.register }>Registrar </button>
                     </form>
                 </div>
             
