@@ -2,6 +2,8 @@ import ar.edu.unq.eis.DAO.*
 import org.jetbrains.exposed.exceptions.ExposedSQLException
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.lang.Exception
+import com.fasterxml.jackson.annotation.JsonIgnore
+
 import Pet
 
 object VeteApp {
@@ -41,11 +43,11 @@ object VeteApp {
 
     }
 
-    fun getOwnersPets(ownerDni: Int): ArrayList<ar.edu.unq.eis.DAO.Pet>{
-        var pets: ArrayList<ar.edu.unq.eis.DAO.Pet> = arrayListOf<ar.edu.unq.eis.DAO.Pet>()
+    fun getOwnersPets(ownerDni: Int): ArrayList<Pet>{
+        var pets: ArrayList<Pet> = arrayListOf<Pet>()
         try {
             transaction {
-                pets = personDAO.readPetsOf(ownerDni)
+                pets = (personDAO.readPetsOf(ownerDni)) as ArrayList<Pet>
 
             }
         }catch (e : Exception){

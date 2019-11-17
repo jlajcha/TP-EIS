@@ -1,5 +1,6 @@
 import ar.edu.unq.eis.DAO.ExposedPersonDAO
 import ar.edu.unq.eis.DAO.PersonDAO
+import com.fasterxml.jackson.annotation.JsonIgnore
 
 class Client (var name:String,
               var lastname: String,
@@ -7,8 +8,7 @@ class Client (var name:String,
               var email: String,
               var telephone: String,
               var dni: Int) {
-
-              var pets: MutableCollection<Pet> = mutableListOf()
+    @JsonIgnore  var pets: MutableCollection<Pet> = mutableListOf()
 
               companion object {
                 @JvmStatic fun main(args: Array<String>) { }
