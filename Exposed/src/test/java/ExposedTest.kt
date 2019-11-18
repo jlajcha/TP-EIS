@@ -22,7 +22,7 @@ class ExposedTest {
             SchemaUtils.create(Pets)
             SchemaUtils.create(PetsOfs)
 
-            personDAO.createPerson("Pepe","Argento",24543234,"@")
+            personDAO.createPerson("Pepe","Argento",24543234,"Siempre Viva 123", "pepe@pepelandia.com.ar", "4444-4444")
             petDAO.createPet(24543234,"Bruno", "Cabezon")
         }
     }
@@ -37,7 +37,7 @@ class ExposedTest {
             SchemaUtils.create(Pets)
             SchemaUtils.create(PetsOfs)
 
-            personDAO.createPerson("Pepe", "Argento", 24543234, "@")
+            personDAO.createPerson("Pepe","Argento",24543234,"Siempre Viva 123", "pepe@pepelandia.com.ar", "4")
             assertEquals(24543234, personDAO.readPersonByDni(24543234).dni)
         }
     }
@@ -53,11 +53,11 @@ class ExposedTest {
             SchemaUtils.create(Pets)
             SchemaUtils.create(PetsOfs)
 
-            personDAO.createPerson("Paul", "Cranst", 30000000, "aaron@gmail.com")
-            personDAO.createPerson("Bryan", "Cranston", 20000000, "cranstonMeth@gmail.com")
-            personDAO.createPerson("Bob", "Cran", 20000002, "saulgoodman@gmail.com")
-            personDAO.createPerson("Anna", "Cranist", 22000000, "annaGun@gmail.com")
-            personDAO.createPerson("Cranic", "Norris", 20000001, "deanNorris@gmail.com")
+            personDAO.createPerson("Paul", "Cranst", 30000000, "aaron@gmail.com", "@", "4")
+            personDAO.createPerson("Bryan", "Cranston", 20000000, "cranstonMeth@gmail.com", "@", "4")
+            personDAO.createPerson("Bob", "Cran", 20000002, "saulgoodman@gmail.com", "@", "4")
+            personDAO.createPerson("Anna", "Cranist", 22000000, "annaGun@gmail.com", "@", "4")
+            personDAO.createPerson("Cranic", "Norris", 20000001, "deanNorris@gmail.com", "@", "4")
 
             assertEquals(5, personDAO.readPersonsByLastname("Cran").size)
         }
@@ -73,13 +73,19 @@ class ExposedTest {
             SchemaUtils.create(Pets)
             SchemaUtils.create(PetsOfs)
 
-            personDAO.createPerson("Paul", "Aaron", 30000000, "aaron@gmail.com")
-            personDAO.createPerson("Bryan", "Cranston", 20000000, "cranstonMeth@gmail.com")
-            personDAO.createPerson("Bob", "Odenkirk", 20000002, "saulgoodman@gmail.com")
-            personDAO.createPerson("Anna", "Gunn", 22000000, "annaGun@gmail.com")
-            personDAO.createPerson("Dean", "Norris", 20000001, "deanNorris@gmail.com")
+            personDAO.createPerson("Paul", "Aaron", 30000000, "aaron@gmail.com", "@", "4")
+            personDAO.createPerson("Bryan", "Cranston", 20000000, "cranstonMeth@gmail.com", "@", "4")
+            personDAO.createPerson("Bob", "Odenkirk", 20000002, "saulgoodman@gmail.com", "@", "4")
+            personDAO.createPerson("Anna", "Gunn", 22000000, "annaGun@gmail.com", "@", "4")
+            personDAO.createPerson("Dean", "Norris", 20000001, "deanNorris@gmail.com", "@", "4")
 
             assertEquals("Bob", personDAO.readPersonsByLastname("Bob").first().name)
+        }
+    }
+    @Test
+    fun readPetsOf(){
+        transaction {
+            personDAO.readPetsOf(24543234).forEach { println(it.code) }
         }
     }
 

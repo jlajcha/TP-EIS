@@ -11,14 +11,17 @@ class ExposedPersonDAO : PersonDAO {
     override fun createPerson(givenName : String,
                               givenLastname : String,
                               givenDni : Int,
-                              givenEmail : String) : Person{
+                              givenAddress : String,
+                              givenEmail : String,
+                              givenTelephone : String) : Person{
 
         val person = Person.new {
             dni = givenDni
             name = givenName
             lastname = givenLastname
+            address = givenAddress
             email = givenEmail
-            telephone = 4
+            telephone = givenTelephone
         }
         return person
     }

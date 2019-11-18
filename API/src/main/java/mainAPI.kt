@@ -19,7 +19,6 @@ fun main() {
             .start(7000)
     app.get("/") { ctx -> ctx.json(mapOf("message" to " Welcome to VetApp ~ Online ")) }
 
-
     val clientController = ClientController()
     
     app.routes {
@@ -31,6 +30,9 @@ fun main() {
         }
         path("pets_by_dni"){
             get(clientController::getPetsByDni)
+        }
+        path("client_by_dni"){
+            get(clientController::getClientByDni)
         }
     }
 }
