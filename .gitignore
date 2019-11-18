@@ -1,9 +1,11 @@
 # IntelliJ
 .idea/
 /Exposed/.idea/
+/Exposed/out/
+/Exposed/target/
 /model/.idea/
 /model/out/
-/Exposed/out/
+/model/target/
 
 # Maven
 target/
