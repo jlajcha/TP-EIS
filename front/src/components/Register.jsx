@@ -42,6 +42,7 @@ export default class Register  extends React.Component{
                 showPopup: false,
                 petName: '',
                 notes: '',
+                error: ''
                     };
         
         this.changeFirstName = this.changeFirstName.bind(this);
@@ -50,7 +51,7 @@ export default class Register  extends React.Component{
         this.changeTel = this.changeTel.bind(this);
         this.changeAddress = this.changeAddress.bind(this);
         this.changeMail = this.changeMail.bind(this);
-        this.register = this.register.bind(this)
+        this.registerClient = this.registerClient.bind(this)
 
         this.togglePopup = this.togglePopup.bind(this);   
 
@@ -90,7 +91,7 @@ export default class Register  extends React.Component{
         this.setState( {notes: event.target.value} )
     }
 
-    register() {
+    registerClient() {
           const body = {
             dni : this.state.dni,
             name: this.state.firstName,
@@ -103,8 +104,6 @@ export default class Register  extends React.Component{
             .then(() => this.setState({ toHome: true }))
             .catch(() => this.setState({ error: 'Usuario ya utilizado' }));  
         }
-
-
       
     addPets(){
         const body = {
@@ -178,12 +177,12 @@ export default class Register  extends React.Component{
                             <input type="text" name ="address" className="fieldForm" value={this.state.address} onChange={this.changeAddress} placeholder="Domicilio"/>
                             <input type="text" name ="mail" className="fieldForm" value={this.state.mail} onChange={this.changeMail} placeholder="Mail"/>
                         </div>
+                        <button type = "button" className = "addPet" onClick={ this.registerClient }>Registrar </button>
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
                             {this.createContentPopUp()}
                             <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>Agregar</button>
                         </div>
-                        <button type = "button" className = "" onClick={() => this.register }>Registrar </button>
                     </form>
                 </div>
             
