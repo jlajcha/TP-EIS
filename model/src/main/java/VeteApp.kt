@@ -2,9 +2,6 @@ import ar.edu.unq.eis.DAO.*
 import org.jetbrains.exposed.exceptions.ExposedSQLException
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.lang.Exception
-import com.fasterxml.jackson.annotation.JsonIgnore
-
-import Pet
 
 object VeteApp {
     val db = ConnectionBlock()
@@ -16,44 +13,53 @@ object VeteApp {
                      lastname:String,
                      address:String,
                      email:String,
-                     telephone:String): Client {
+                     telephone:String) {
 
         try {
             transaction {
-                personDAO.createPerson(name, lastname, dni, email)
+                personDAO.createPerson(name, lastname, dni, address, email, telephone)
             }
         }catch (e : Exception){
             throw (e as ExposedSQLException)
         }
-        return Client(name, lastname,address, email, telephone, dni)
     }
-    fun createPet(name:String,ownerDni:Int,notes:String):Pet{
+    fun createPet(name:String,ownerDni:Int,notes:String){
 
         try {
             transaction {
                 petDao.createPet(ownerDni,name, notes)
-
             }
         }catch (e : Exception){
             throw (e as ExposedSQLException)
         }
+    }
+    fun getClientById(ownerDni: Int) : Client{
+        try {
+            return transaction {
+                val daoClient = personDAO.readPersonByDni(ownerDni)
 
-        return  Pet(name,ownerDni,notes)
-
-
+                return@transaction Client(daoClient.name,
+                                          daoClient.lastname,
+                                          daoClient.address,
+                                          daoClient.email,
+                                          daoClient.telephone,
+                                          daoClient.dni)}
+        }catch (e : Exception){
+            throw (e as ExposedSQLException)
+        }
     }
 
     fun getOwnersPets(ownerDni: Int): ArrayList<Pet>{
-        var pets: ArrayList<Pet> = arrayListOf<Pet>()
         try {
-            transaction {
-                pets = (personDAO.readPetsOf(ownerDni)) as ArrayList<Pet>
+            return transaction {
+                val daoPets = personDAO.readPetsOf(ownerDni)
+                val pets = ArrayList<Pet>()
 
+                daoPets.forEach { pets.add(Pet(it.name, it.note)) }
+                return@transaction pets
             }
         }catch (e : Exception){
             throw (e as ExposedSQLException)
         }
-
-        return  pets
     }
 }

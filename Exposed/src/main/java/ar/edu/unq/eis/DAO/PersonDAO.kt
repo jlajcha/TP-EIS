@@ -5,7 +5,9 @@ interface PersonDAO {
     fun createPerson(givenName : String,
                      givenLastname : String,
                      givenDni : Int,
-                     givenEmail : String) : Person
+                     givenAddress : String,
+                     givenEmail : String,
+                     givenTelephone : String) : Person
 
     fun updatePerson(person : Person)
 

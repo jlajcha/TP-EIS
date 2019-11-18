@@ -35,13 +35,24 @@ class ClientController {
             veteApp.createPet(pet.petName,pet.ownerDni,pet.notes)
         ctx.status(HttpStatus.CREATED_201)
     }
+    fun getClientByDni(ctx: Context){
+        val dni = ctx.body<DataDni>()
+        var dataClient : DataClient
 
+        var client = veteApp.getClientById(dni.dni)
+        dataClient = DataClient(client.name, client.lastname, client.address, client.email, client.telephone, client.dni)
+
+        ctx.json(dataClient)
+    }
     fun getPetsByDni(ctx:Context){
         val dni = ctx.body<DataDni>()
-        var  pets = veteApp.getOwnersPets(dni.dni)
-        ctx.json( pets)
-        ctx.status(HttpStatus.OK_200)
+        var dataPets = ArrayList<DataPet>()
 
+        var pets = veteApp.getOwnersPets(dni.dni)
+        pets.forEach { dataPets.add(DataPet(it.petName, dni.dni, it.notes)) }
+
+        ctx.json(dataPets)
+        ctx.status(HttpStatus.OK_200)
     }
 }
 //en postman el post en la ruta localhost:7000/add_client con el siguiente jason en el body .   
