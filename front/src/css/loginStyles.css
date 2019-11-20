@@ -112,5 +112,13 @@
 
 }
 
+ul li {
+    display: inline-flex;
+    justify-content: space-between;
+    width:10em;
+    margin-left: 6em;
+    float:left;
+}
+
 .savePet{
 }
