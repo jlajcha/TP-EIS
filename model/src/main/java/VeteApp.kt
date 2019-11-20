@@ -55,7 +55,7 @@ object VeteApp {
                 val daoPets = personDAO.readPetsOf(ownerDni)
                 val pets = ArrayList<Pet>()
 
-                daoPets.forEach { pets.add(Pet(it.name, it.note)) }
+                daoPets.forEach { pets.add(Pet(it.code, it.name, it.note)) }
                 return@transaction pets
             }
         }catch (e : Exception){

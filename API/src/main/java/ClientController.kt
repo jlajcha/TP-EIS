@@ -1,7 +1,9 @@
 import io.javalin.Context
 import org.eclipse.jetty.http.HttpStatus
 
-data class DataDni(val dni: Int)
+data class DataDni(var prueba: String,
+                   var document: Int)
+
 data class DataClient(val name : String,
                       var surname:String,
                       var address : String ,
@@ -10,7 +12,8 @@ data class DataClient(val name : String,
                       var dni: Int)
 
 //la idea es que la notas pueda agregar cosas relevantes del bicho
-data class DataPet(var petName:String,
+data class DataPet(var code : Int,
+                   var petName:String,
                    var ownerDni: Int,
                    var notes:String )
 
@@ -18,7 +21,6 @@ class ClientController {
     val veteApp = VeteApp
 
     fun addClient(ctx: Context) {
-        println("hola")
         val client = ctx.body<DataClient>()
 
         veteApp.createClient(client.dni,
@@ -31,6 +33,7 @@ class ClientController {
     }
 
     fun addPet(ctx: Context){
+
         val pet= ctx.body<DataPet>()
             veteApp.createPet(pet.petName,pet.ownerDni,pet.notes)
         ctx.status(HttpStatus.CREATED_201)
@@ -39,17 +42,17 @@ class ClientController {
         val dni = ctx.body<DataDni>()
         var dataClient : DataClient
 
-        var client = veteApp.getClientById(dni.dni)
+        var client = veteApp.getClientById(dni.document)
         dataClient = DataClient(client.name, client.lastname, client.address, client.email, client.telephone, client.dni)
 
         ctx.json(dataClient)
     }
-    fun getPetsByDni(ctx:Context){
-        val dni = ctx.body<DataDni>()
+    fun getPetsByDni(ctx: Context){
+        val dni = ctx.pathParam("dni").toInt()
         var dataPets = ArrayList<DataPet>()
 
-        var pets = veteApp.getOwnersPets(dni.dni)
-        pets.forEach { dataPets.add(DataPet(it.petName, dni.dni, it.notes)) }
+        var pets = veteApp.getOwnersPets(dni)
+        pets.forEach { dataPets.add(DataPet(it.code, it.petName, dni, it.notes)) }
 
         ctx.json(dataPets)
         ctx.status(HttpStatus.OK_200)

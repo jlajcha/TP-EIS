@@ -29,7 +29,9 @@ fun main() {
             post(clientController::addPet)
         }
         path("pets_by_dni"){
-            get(clientController::getPetsByDni)
+            path(":dni") {
+                get(clientController::getPetsByDni)
+            }
         }
         path("client_by_dni"){
             get(clientController::getClientByDni)

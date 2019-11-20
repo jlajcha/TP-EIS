@@ -1,6 +1,7 @@
 import React    from "react";
 import {register} from "../Api";
 import {addPet} from "../Api";
+import {getPets} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
 
@@ -42,7 +43,8 @@ export default class Register  extends React.Component{
                 showPopup: false,
                 petName: '',
                 notes: '',
-                error: ''
+                messageClient: '',
+                messagePet: ''
                     };
         
         this.changeFirstName = this.changeFirstName.bind(this);
@@ -52,6 +54,7 @@ export default class Register  extends React.Component{
         this.changeAddress = this.changeAddress.bind(this);
         this.changeMail = this.changeMail.bind(this);
         this.registerClient = this.registerClient.bind(this)
+
 
         this.togglePopup = this.togglePopup.bind(this);   
 
@@ -100,10 +103,21 @@ export default class Register  extends React.Component{
             email: this.state.mail,
             telephone: this.state.tel,
           };
-          register(body)
-            .then(() => this.setState({ toHome: true }))
-            .catch(() => this.setState({ error: 'Usuario ya utilizado' }));  
+          if (this.state.dni === "" || this.state.firstName === "" || this.state.lastName === ""
+                || this.state.address === "" || this.state.mail === "" || this.state.tel === ""){
+                    this.setState({ messageClient: 'Falta cargar algún dato' });
+          }                
+            else{
+                register(body)
+                    .then(() => this.setState({ messageClient: 'Cliente registrado exitosamente' }))
+                    .catch(() => this.setState({ messageCliente: 'No se pudo registrar el cliente' }));  
+            }
         }
+    getMessage(value){
+        var r;
+        value ? r = this.state.messageClient : r = this.state.messagePet;
+        return r;
+    }
       
     addPets(){
         const body = {
@@ -111,9 +125,18 @@ export default class Register  extends React.Component{
             ownerDni: this.state.dni,
             notes: this.state.notes,
         };
+        if (this.state.petName === "" || this.state.ownerDni === ""){
+            this.setState({ messagePet: 'Falta cargar algún dato' });
+        }else{
         addPet(body)
-            .then(() => this.setState({ toHome: true }))
-            .catch(() => this.setState({ error: 'Usuario ya utilizado' })); 
+            .then(this.getAllPets())                  
+            .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
+        }
+    }
+    getAllPets(){
+        getPets(this.state.dni)
+                    .then(result => { this.setState({pets: result, messagePet: 'Mascota registrada exitosamente'})})
+                    .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
     }
 
     /********************************* Manipulación del Pop-Up ********************************/
@@ -145,7 +168,7 @@ export default class Register  extends React.Component{
                         <button onClick={() => this.togglePopup()}>Cancelar</button>
                         <button type = "button" className = "savePet" onClick ={ () => this.addPets() }>Guardar </button>
                     </div>
-                        
+                    <p>{this.getMessage(false)}</p>
                 </form>
             </div>
         );
@@ -153,7 +176,21 @@ export default class Register  extends React.Component{
 
    
     togglePopup(event) {
-        this.setState({ showPopup: event });
+        this.setState({ showPopup: event, messagePet: '' });
+   }
+   renderColumns(){
+       return((columns)=>      
+                            <li key={columns}>
+                                <div>Código  |  Nombre</div>
+                            </li>)
+   }
+   renderPets(){
+        return((pets) =>      
+                        <li key={pets.code}>
+                            <div>{pets.code}</div>
+                            <div>{pets.petName}</div>
+                            <div>{pets.note}</div>
+                        </li>)
    }
 
 
@@ -177,12 +214,20 @@ export default class Register  extends React.Component{
                             <input type="text" name ="address" className="fieldForm" value={this.state.address} onChange={this.changeAddress} placeholder="Domicilio"/>
                             <input type="text" name ="mail" className="fieldForm" value={this.state.mail} onChange={this.changeMail} placeholder="Mail"/>
                         </div>
+                        <p>{this.getMessage(true)}</p>
                         <button type = "button" className = "addPet" onClick={ this.registerClient }>Registrar </button>
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
+                            <div>
+                                <ul>
+                                    {[1,2,3].map(this.renderColumns())}
+                                    {this.state.pets.map(this.renderPets())}
+                                </ul>
+                            </div>
                             {this.createContentPopUp()}
                             <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>Agregar</button>
                         </div>
+                        <p>{this.getMessage(true)}</p>
                     </form>
                 </div>
             

@@ -1,5 +1,6 @@
 
-class Pet(var petName:String,
+class Pet(val code: Int,
+          var petName:String,
           var notes:String)
      {
     var clinicalHistory: MutableCollection<Visit> = mutableListOf()

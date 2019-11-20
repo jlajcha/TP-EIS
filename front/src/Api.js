@@ -8,3 +8,4 @@ const request = (type, path, body) => axios
 
 export const register = body => request('post', '/add_client', body);
 export const addPet = body => request('post','/add_pet', body);
+export const getPets = body => request('get', '/pets_by_dni/' + body);
