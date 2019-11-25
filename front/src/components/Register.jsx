@@ -158,17 +158,17 @@ export default class Register  extends React.Component{
         return (
             <div>
                 <form className="formPet">
-                    <p>Nueva mascota</p>
+                    <p className="nuevaMascota">Nueva mascota</p>
                     <div className="rowfilds">
-                        <input type="text" name="namePet" className="fieldForm " placeholder="Nombre del animal" value={this.state.petName} onChange={this.changeNameAnimal}/>                     
-                        <input type="text" name ="lastName" className = "fieldForm"  placeholder="DNI del dueño" value={this.state.dni} onChange={this.changeDniOwner}/>      
+                        <input type="text" name="namePet" className="fieldForm fieldPet" placeholder="Nombre del animal" value={this.state.petName} onChange={this.changeNameAnimal}/>                     
+                        <input type="text" name ="lastName" className = "fieldForm fieldPet"  placeholder="DNI del dueño" value={this.state.dni} onChange={this.changeDniOwner}/>      
                     </div>
-                    <textarea className="notes" name="notes" rows="6" cols="50" placeholder="Historia clínica" onChange={this.changeNotes}></textarea> 
+                    <textarea className="notes fieldPet" name="notes" rows="8" cols="50" placeholder="Historia clínica" onChange={this.changeNotes}></textarea> 
                     <div className="rowfilds">
-                        <button onClick={() => this.togglePopup()}>Cancelar</button>
-                        <button type = "button" className = "savePet" onClick ={ () => this.addPets() }>Guardar </button>
+                        <button className = "savePet" onClick={() => this.togglePopup()}>CANCELAR</button>
+                        <button type = "button" className = "savePet" onClick ={ () => this.addPets() }>GUARDAR </button>
                     </div>
-                    <p>{this.getMessage(false)}</p>
+                    <p className="message">{this.getMessage(false)}</p>
                 </form>
             </div>
         );
@@ -214,8 +214,7 @@ export default class Register  extends React.Component{
                             <input type="text" name ="address" className="fieldForm" value={this.state.address} onChange={this.changeAddress} placeholder="Domicilio"/>
                             <input type="text" name ="mail" className="fieldForm" value={this.state.mail} onChange={this.changeMail} placeholder="Mail"/>
                         </div>
-                        <p>{this.getMessage(true)}</p>
-                        <button type = "button" className = "addPet" onClick={ this.registerClient }>Registrar </button>
+                        {/* <p className="message">{this.getMessage(true)}</p> */}
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
                             <div>
@@ -225,9 +224,10 @@ export default class Register  extends React.Component{
                                 </ul>
                             </div>
                             {this.createContentPopUp()}
-                            <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>Agregar</button>
+                            <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>AGREGAR</button>
                         </div>
-                        <p>{this.getMessage(true)}</p>
+                        <button type = "button" className = "addPet registrar" onClick={ this.registerClient }>REGISTRAR </button>
+                        <p className="message">{this.getMessage(true)}</p>
                     </form>
                 </div>
             

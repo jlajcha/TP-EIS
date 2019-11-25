@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+.containerNav{
+    height: 15vh;
+    background: #20D7BB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleNav {
+    color: #FFFBFA;
+    font-size: 3rem;
+    font-family: 'Quicksand', sans-serif;
+}

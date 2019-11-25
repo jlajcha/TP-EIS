@@ -26,9 +26,5 @@
     margin: auto;
     border-radius: 20px;
     
-    background: rgba(226,226,226,1);
-    background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
-    
-    padding: 1%;
+    background: #99EBDD;
   }
