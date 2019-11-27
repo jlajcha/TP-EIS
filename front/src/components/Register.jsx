@@ -4,6 +4,7 @@ import {addPet} from "../Api";
 import {getPets} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
+import Pet from "./Pet.jsx"
 
 /************************************ Componente PopUp *************************************/
 
@@ -135,7 +136,7 @@ export default class Register  extends React.Component{
     }
     getAllPets(){
         getPets(this.state.dni)
-                    .then(result => { this.setState({pets: result, messagePet: 'Mascota registrada exitosamente'})})
+                    .then(result => { this.setState({pets: result, messagePet: 'Mascota registrada exitosamente'}, console.log(this.state.pets))})
                     .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
     }
 
@@ -181,15 +182,14 @@ export default class Register  extends React.Component{
    renderColumns(){
        return((columns)=>      
                             <li key={columns}>
-                                <div>Código  |  Nombre</div>
+                                <div>Nombre  | Nota </div>
                             </li>)
    }
    renderPets(){
         return((pets) =>      
                         <li key={pets.code}>
-                            <div>{pets.code}</div>
-                            <div>{pets.petName}</div>
-                            <div>{pets.note}</div>
+                            <div color = 'white'>{pets.petName}</div>
+                            <div>{pets.notes}</div>
                         </li>)
    }
 
@@ -198,6 +198,14 @@ export default class Register  extends React.Component{
 
     render(){
         
+      
+      const mappingPets = (pet) => (<Pet key = {pet.code}
+        petName = {pet.petName}
+        petNotes = {pet.notes}
+        petCode = {pet.code}
+         />)
+
+
         return(
                 <div className="containerForm">
                     <form  className="formRegister">
@@ -215,18 +223,21 @@ export default class Register  extends React.Component{
                             <input type="text" name ="mail" className="fieldForm" value={this.state.mail} onChange={this.changeMail} placeholder="Mail"/>
                         </div>
                         {/* <p className="message">{this.getMessage(true)}</p> */}
+                        <button type = "button" className = "addPet registrar" onClick={ this.registerClient }>REGISTRAR </button>
                         <p className="titleForm mascotas">Mascotas</p>
                         <div className="containerPet">
-                            <div>
-                                <ul>
-                                    {[1,2,3].map(this.renderColumns())}
-                                    {this.state.pets.map(this.renderPets())}
+                           
+                                <ul className="listPets">
+                                                         
+                                    {this.state.pets.map(mappingPets)}
+                                 
                                 </ul>
-                            </div>
+                           
                             {this.createContentPopUp()}
-                            <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>AGREGAR</button>
                         </div>
-                        <button type = "button" className = "addPet registrar" onClick={ this.registerClient }>REGISTRAR </button>
+                        <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>AGREGAR</button>
+                       
+                        
                         <p className="message">{this.getMessage(true)}</p>
                     </form>
                 </div>
