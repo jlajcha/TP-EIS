@@ -57,6 +57,18 @@ class ClientController {
         ctx.json(dataPets)
         ctx.status(HttpStatus.OK_200)
     }
+
+    fun getClientsByName(ctx: Context){
+
+        val name = ctx.pathParam("name")
+        val dataClients = ArrayList<DataClient>()
+
+        val clients = veteApp.getSearchedClientsByName(name)
+        clients.forEach { dataClients.add(DataClient(it.name,it.lastname,it.address,it.email,it.telephone,it.dni))}
+
+        ctx.json(dataClients)
+        ctx.status(HttpStatus.OK_200)
+    }
 }
 //en postman el post en la ruta localhost:7000/add_client con el siguiente jason en el body .   
 /*{
