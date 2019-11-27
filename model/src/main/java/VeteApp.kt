@@ -61,5 +61,19 @@ object VeteApp {
         }catch (e : Exception){
             throw (e as ExposedSQLException)
         }
+
+    }
+    fun getSearchedClientsByName(name: String): ArrayList<Client> {
+        try {
+            return transaction {
+                val daoClients = personDAO.readPersonsByLastname(name)
+                val clients = ArrayList<Client>()
+
+                daoClients.forEach { clients.add(Client(it.name, it.lastname, it.address, it.email, it.telephone, it.dni)) }
+                return@transaction clients
+            }
+        }catch(e : Exception) {
+            throw (e as ExposedSQLException)
+        }
     }
 }

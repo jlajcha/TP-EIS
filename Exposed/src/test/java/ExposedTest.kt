@@ -85,7 +85,19 @@ class ExposedTest {
     @Test
     fun readPetsOf(){
         transaction {
-            personDAO.readPetsOf(24543234).forEach { println(it.code) }
+            SchemaUtils.drop(PetsOfs)
+            SchemaUtils.drop(Persons)
+            SchemaUtils.drop(Pets)
+
+            SchemaUtils.create(Persons)
+            SchemaUtils.create(Pets)
+            SchemaUtils.create(PetsOfs)
+
+            personDAO.createPerson("Paul", "Aaron", 30000000, "aaron@gmail.com", "@", "4")
+            petDAO.createPet(30000000,"pololo","afiebrado")
+        }
+            transaction {
+            print(personDAO.readPetsOf(30000000))
         }
     }
 

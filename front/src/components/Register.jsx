@@ -2,6 +2,7 @@ import React    from "react";
 import {register} from "../Api";
 import {addPet} from "../Api";
 import {getPets} from "../Api";
+import {getClients} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
 import Pet from "./Pet.jsx"
@@ -41,11 +42,14 @@ export default class Register  extends React.Component{
                 address: '',
                 mail:'',
                 pets: [],
+                clients: [],
                 showPopup: false,
                 petName: '',
                 notes: '',
+                search: '',
                 messageClient: '',
-                messagePet: ''
+                messagePet: '',
+                searchPets: false
                     };
         
         this.changeFirstName = this.changeFirstName.bind(this);
@@ -56,14 +60,14 @@ export default class Register  extends React.Component{
         this.changeMail = this.changeMail.bind(this);
         this.registerClient = this.registerClient.bind(this)
 
-
         this.togglePopup = this.togglePopup.bind(this);   
 
         this.changeNameAnimal = this.changeNameAnimal.bind(this);
         this.changeNotes = this.changeNotes.bind(this);
         this.changeDniOwner = this.changeDniOwner.bind(this)
-    }
 
+        this.changeSearch = this.changeSearch.bind(this);
+    }
     changeFirstName(event){
         this.setState( {firstName: event.target.value} )        
     }
@@ -82,17 +86,17 @@ export default class Register  extends React.Component{
     changeMail(event){
         this.setState( {mail: event.target.value} )
     }
-
     changeNameAnimal(event){
         this.setState( {petName: event.target.value} )
     }
-
     changeDniOwner(event){
         this.setState( {dni: event.target.value} )
     }
-
     changeNotes(event){
         this.setState( {notes: event.target.value} )
+    }
+    changeSearch(event){
+        this.setState( {search: event.target.value} )
     }
 
     registerClient() {
@@ -130,14 +134,19 @@ export default class Register  extends React.Component{
             this.setState({ messagePet: 'Falta cargar algún dato' });
         }else{
         addPet(body)
-            .then(this.getAllPets())                  
+            .then(this.setState({messagePet: 'Mascota registrada exitosamente'}))                  
             .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
         }
     }
     getAllPets(){
         getPets(this.state.dni)
-                    .then(result => { this.setState({pets: result, messagePet: 'Mascota registrada exitosamente'}, console.log(this.state.pets))})
+                    .then(result => { this.setState({pets: result})})
                     .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
+    }
+    getAllClients(){
+        getClients(this.state.search)
+                    .then(result => { this.setState({clients: result})})
+                    .catch(() => this.setState({ messageClient: 'Fallo la busqueda' })); 
     }
 
     /********************************* Manipulación del Pop-Up ********************************/
@@ -166,7 +175,7 @@ export default class Register  extends React.Component{
                     </div>
                     <textarea className="notes fieldPet" name="notes" rows="8" cols="50" placeholder="Historia clínica" onChange={this.changeNotes}></textarea> 
                     <div className="rowfilds">
-                        <button className = "savePet" onClick={() => this.togglePopup()}>CANCELAR</button>
+                        <button className = "savePet" onClick={() => {this.togglePopup();if (this.state.dni!=0){this.getAllPets();}}}>CANCELAR</button>
                         <button type = "button" className = "savePet" onClick ={ () => this.addPets() }>GUARDAR </button>
                     </div>
                     <p className="message">{this.getMessage(false)}</p>
@@ -174,16 +183,9 @@ export default class Register  extends React.Component{
             </div>
         );
     }
-
    
     togglePopup(event) {
-        this.setState({ showPopup: event, messagePet: '' });
-   }
-   renderColumns(){
-       return((columns)=>      
-                            <li key={columns}>
-                                <div>Nombre  | Nota </div>
-                            </li>)
+        this.setState({ showPopup: event, messagePet: ''});
    }
    renderPets(){
         return((pets) =>      
@@ -193,11 +195,9 @@ export default class Register  extends React.Component{
                         </li>)
    }
 
-
     /**********************************************************************************************/
 
-    render(){
-        
+    render(){       
       
       const mappingPets = (pet) => (<Pet key = {pet.code}
         petName = {pet.petName}
@@ -205,13 +205,16 @@ export default class Register  extends React.Component{
         petCode = {pet.code}
          />)
 
-
         return(
                 <div className="containerForm">
                     <form  className="formRegister">
+                        <div className="rowfilds">
+                        <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
+                        <button type="button" className="fieldForm" onClick={() => this.getAllClients()}>BUSCAR</button>
+                        </div>
                         <p className="titleForm">Registrar cliente</p>
                         <div className="rowfilds">
-                            <input type="text" name="firstName" className="fieldForm "  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
+                            <input type="text" name="firstName" className="fieldForm"  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
                             <input type="text" name ="lastName" className = "fieldForm"  value={this.state.lastName} onChange={this.changeLastName} placeholder="Apellido"/>          
                         </div>
                         <div className="rowfilds">
@@ -228,16 +231,13 @@ export default class Register  extends React.Component{
                         <div className="containerPet">
                            
                                 <ul className="listPets">
-                                                         
                                     {this.state.pets.map(mappingPets)}
-                                 
                                 </ul>
                            
                             {this.createContentPopUp()}
                         </div>
                         <button type="button" className="addPet" onClick={() => this.togglePopup(!this.state.showPopup)}>AGREGAR</button>
-                       
-                        
+                               
                         <p className="message">{this.getMessage(true)}</p>
                     </form>
                 </div>
