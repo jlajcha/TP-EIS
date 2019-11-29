@@ -66,7 +66,7 @@ export default class Register  extends React.Component{
         this.changeNotes = this.changeNotes.bind(this);
         this.changeDniOwner = this.changeDniOwner.bind(this)
 
-        this.changeSearch = this.changeSearch.bind(this);
+        
     }
     changeFirstName(event){
         this.setState( {firstName: event.target.value} )        
@@ -94,9 +94,6 @@ export default class Register  extends React.Component{
     }
     changeNotes(event){
         this.setState( {notes: event.target.value} )
-    }
-    changeSearch(event){
-        this.setState( {search: event.target.value} )
     }
 
     registerClient() {
@@ -143,12 +140,7 @@ export default class Register  extends React.Component{
                     .then(result => { this.setState({pets: result})})
                     .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
     }
-    getAllClients(){
-        getClients(this.state.search)
-                    .then(result => { this.setState({clients: result})})
-                    .catch(() => this.setState({ messageClient: 'Fallo la busqueda' })); 
-    }
-
+    
     /********************************* Manipulación del Pop-Up ********************************/
 
     createContentPopUp(){
@@ -208,10 +200,7 @@ export default class Register  extends React.Component{
         return(
                 <div className="containerForm">
                     <form  className="formRegister">
-                        <div className="rowfilds">
-                        <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
-                        <button type="button" className="fieldForm" onClick={() => this.getAllClients()}>BUSCAR</button>
-                        </div>
+                       
                         <p className="titleForm">Registrar cliente</p>
                         <div className="rowfilds">
                             <input type="text" name="firstName" className="fieldForm"  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     

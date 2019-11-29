@@ -1,7 +1,7 @@
 import React          from 'react';
 import { withRouter } from 'react-router';
 import                '../css/navStyles.css';
-
+import {getClients} from "../Api";
 
 class Nav extends React.Component {
 
@@ -10,7 +10,19 @@ class Nav extends React.Component {
 
         this.state = {
             text: '',
+            clients: [],
         }
+    
+        this.changeSearch = this.changeSearch.bind(this);
+    }
+
+    changeSearch(event){
+        this.setState( {search: event.target.value} )
+    }
+    getAllClients(){
+        getClients(this.state.search)
+                    .then(result => { this.setState({clients: result})})
+                    .catch(() => this.setState({ messageClient: 'Fallo la busqueda' })); 
     }
 
 
@@ -19,7 +31,15 @@ class Nav extends React.Component {
     render() {
         return (
             <div className="containerNav">
+              <div>
                 <p className="titleNav">ADMINISTRACIÓN DE REGISTROS</p>
+                    <br/> 
+                
+                 <div className="rowfilds">
+                <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
+                <button type="button" className="searchForm" onClick={() => this.getAllClients()}>BUSCAR</button>
+             </div>
+            </div> 
             </div>
         );
     }
