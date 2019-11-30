@@ -9,20 +9,10 @@ class Nav extends React.Component {
         super(props);
 
         this.state = {
-            text: '',
-            clients: [],
+            text: ''
+           
         }
     
-        this.changeSearch = this.changeSearch.bind(this);
-    }
-
-    changeSearch(event){
-        this.setState( {search: event.target.value} )
-    }
-    getAllClients(){
-        getClients(this.state.search)
-                    .then(result => { this.setState({clients: result})})
-                    .catch(() => this.setState({ messageClient: 'Fallo la busqueda' })); 
     }
 
 
@@ -34,12 +24,7 @@ class Nav extends React.Component {
               <div>
                 <p className="titleNav">ADMINISTRACIÓN DE REGISTROS</p>
                     <br/> 
-                
-                 <div className="rowfilds">
-                <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
-                <button type="button" className="searchForm" onClick={() => this.getAllClients()}>BUSCAR</button>
-             </div>
-            </div> 
+                 </div> 
             </div>
         );
     }

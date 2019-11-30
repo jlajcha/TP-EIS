@@ -3,9 +3,11 @@ import {register} from "../Api";
 import {addPet} from "../Api";
 import {getPets} from "../Api";
 import {getClients} from "../Api";
+import {getClientByDni} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
 import Pet from "./Pet.jsx"
+import { Redirect } from 'react-router-dom'
 
 /************************************ Componente PopUp *************************************/
 
@@ -21,6 +23,38 @@ class Popup extends React.Component {
             <div className='popup'>
                 <div className='popup_inner'>
                     {this.props.form}
+                </div>
+            </div>
+        );
+        }
+  }
+
+
+  /**************************************Componente PopUp de Clientes***************************************************/
+
+  class PopupClient extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state={
+            toHome:false,
+        }
+        
+    }
+    render() {
+
+        if (this.state.toHome){
+            return <Redirect to={{
+              pathname: '/',
+              state: { dni: this.state.dni  }}}/>
+            
+        }
+
+
+        return (
+            <div className='popup'>
+                <div className='popup_inner'>
+                    {this.props.formClient}
                 </div>
             </div>
         );
@@ -44,6 +78,7 @@ export default class Register  extends React.Component{
                 mail:'',
                 pets: [],
                 clients: [],
+                showPopUpClient:false,
                 showPopup: false,
                 petName: '',
                 notes: '',
@@ -60,13 +95,15 @@ export default class Register  extends React.Component{
         this.changeAddress = this.changeAddress.bind(this);
         this.changeMail = this.changeMail.bind(this);
         this.registerClient = this.registerClient.bind(this)
-
+        
+        this.togglePopupClient = this.togglePopupClient.bind(this);   
         this.togglePopup = this.togglePopup.bind(this);   
 
         this.changeNameAnimal = this.changeNameAnimal.bind(this);
         this.changeNotes = this.changeNotes.bind(this);
         this.changeDniOwner = this.changeDniOwner.bind(this)
-
+        this.changeSearch = this.changeSearch.bind(this);
+        
         
     }
     changeFirstName(event){
@@ -95,6 +132,11 @@ export default class Register  extends React.Component{
     }
     changeNotes(event){
         this.setState( {notes: event.target.value} )
+    }
+
+
+    changeSearch(event){
+        this.setState( {search: event.target.value} )
     }
 
     registerClient() {
@@ -142,6 +184,22 @@ export default class Register  extends React.Component{
                     .catch(() => this.setState({ messagePet: 'No se pudo registrar la mascota' })); 
     }
     
+    getAllClients(){
+        getClients(this.state.search)
+                    .then(result => { this.setState({clients: result})})
+                    .catch(() => this.setState({ messageClient: 'Fallo la busqueda' })); 
+    }
+
+    getClient(dni){
+        getClientByDni(dni)
+                    .then(result => {this.setState({firstName: result.name, 
+                                                    lastName: result.surname,
+                                                    address: result.address,
+                                                    tel: result.telephone,
+                                                    mail:result.email})})
+                    .catch(); 
+    }    
+    
     /********************************* Manipulación del Pop-Up ********************************/
 
     createContentPopUp(){
@@ -155,6 +213,54 @@ export default class Register  extends React.Component{
               }
             </div>
           );
+    }
+    createContentPopUpClient(){     
+        return (
+            <div className=''>
+              {this.state.showPopUpClient ? 
+                <PopupClient
+                formClient={this.createRegistrationClient()}
+                />
+                : null
+              }
+            </div>
+        );
+    }
+
+    selectClient(document){
+        this.togglePopupClient()
+        this.setState( {dni: document})
+        this.getClient(document)
+        this.getAllPets()
+    }
+
+    createSearchListClient(){
+        return( 
+            this.state.clients.map( (client) => (   
+                    
+                    <div>
+                        <ul key={client.dni}>
+                            <div >
+                                <h5>
+                                    <p>{client.dni}</p>
+                                    </h5> </div>
+                            <div>{client.name}</div>
+                            <div>{client.surname}</div>
+                            <button type = "button"  onClick ={ () => this.selectClient(client.dni) }>Ver </button>
+                        </ul>
+                       
+                    </div>))
+        )
+    }
+
+    createCancelationClient(){
+        return (<div>
+        <button type = "button"  onClick ={ () => this.togglePopupClient() }>Cancelar </button></div>)
+    }
+    createRegistrationClient(){
+        return(
+      <div>{this.createSearchListClient()}  {this.createCancelationClient()}</div>
+        )
     }
 
     createRegistrationPet(){
@@ -180,6 +286,11 @@ export default class Register  extends React.Component{
     togglePopup(event) {
         this.setState({ showPopup: event, messagePet: ''});
    }
+   
+   togglePopupClient(event) {
+        this.setState({ showPopUpClient: event, messageClient: ''});
+    }
+
    renderPets(){
         return((pets) =>      
                         <li key={pets.code}>
@@ -201,7 +312,12 @@ export default class Register  extends React.Component{
         return(
                 <div className="containerForm">
                     <form  className="formRegister">
-                       
+                            
+                        <div className="rowfilds">
+                            <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
+                            <button type="button" className="searchForm" onClick={() => {this.getAllClients();if (this.state.clients.length) {this.togglePopupClient(!this.state.showPopUpClient); }}}>BUSCAR</button>
+                        {this.createContentPopUpClient()}
+                        </div>
                         <p className="titleForm">Registrar cliente</p>
                         <div className="rowfilds">
                             <input type="text" name="firstName" className="fieldForm"  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
