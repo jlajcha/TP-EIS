@@ -9,6 +9,7 @@ import Pet from "./Pet.jsx"
 
 /************************************ Componente PopUp *************************************/
 
+
 class Popup extends React.Component {
 
     constructor(props){
