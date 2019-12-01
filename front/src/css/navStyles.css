@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 .containerNav{
-    height: 15vh;
+    height: 10vh;
     background: #20D7BB;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5rem;
+    width: 100vw;
+    overflow-y: hidden;
 }
 
 .titleNav {
