@@ -6,6 +6,8 @@ import {getClients} from "../Api";
 import {getClientByDni} from "../Api";
 import                  '../css/loginStyles.css';
 import                  '../css/popupStyeles.css';
+import                  '../css/popupStyleClient.css';
+import                '../css/navStyles.css';
 import Pet from "./Pet.jsx"
 import { Redirect } from 'react-router-dom'
 
@@ -238,28 +240,40 @@ export default class Register  extends React.Component{
         return( 
             this.state.clients.map( (client) => (   
                     
-                    <div>
-                        <ul key={client.dni}>
-                            <div >
-                                <h5>
-                                    <p>{client.dni}</p>
-                                    </h5> </div>
-                            <div>{client.name}</div>
-                            <div>{client.surname}</div>
-                            <button type = "button"  onClick ={ () => this.selectClient(client.dni) }>Ver </button>
-                        </ul>
+                        <div key={client.dni} className="row">
+                            <div className="elementRow">{client.dni}</div>
+                            <div className="elementRow">{client.name}</div>
+                            <div className="elementRow">{client.surname}</div>
+                            <div className="containerVer">
+                                <button className="ver" type = "button"  onClick ={ () => this.selectClient(client.dni) }>Ver </button>
+                            </div>
+                        </div>
                        
-                    </div>))
+                    ))
         )
     }
 
     createCancelationClient(){
-        return (<div>
-        <button type = "button"  onClick ={ () => this.togglePopupClient() }>Cancelar </button></div>)
+        return (<div className="cancelarClient">
+        <button  type = "button" className="addPet"  onClick ={ () => this.togglePopupClient() }>Cancelar </button></div>)
     }
+
+    createHeaderTable(){
+        return (
+            <div>
+                <p className="nuevaMascota">Clientes</p>
+                <div className="row rowHeader">
+                    <p className="elementRow elementHeader">DNI</p>
+                    <p className="elementRow elementHeader">NOMBRE</p>
+                    <p className="elementRow elementHeader">APELLIDO</p>
+                </div>
+            </div>
+        )
+    }
+
     createRegistrationClient(){
         return(
-      <div>{this.createSearchListClient()}  {this.createCancelationClient()}</div>
+      <div>{this.createHeaderTable()}  {this.createSearchListClient()}  {this.createCancelationClient()}</div>
         )
     }
 
@@ -294,7 +308,7 @@ export default class Register  extends React.Component{
    renderPets(){
         return((pets) =>      
                         <li key={pets.code}>
-                            <div color = 'white'>{pets.petName}</div>
+                            <div>{pets.petName}</div>
                             <div>{pets.notes}</div>
                         </li>)
    }
@@ -310,14 +324,18 @@ export default class Register  extends React.Component{
          />)
 
         return(
+            <div>
+
+                <div className="containerNav">
+                    <div className="rowBuscar">
+                        <input type="text" name="search" className="inputBuscar"  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
+                        <button type="button" className="buscarClient" onClick={() => {this.getAllClients();if (this.state.clients.length) {this.togglePopupClient(!this.state.showPopUpClient); }}}>BUSCAR</button>
+                        {this.createContentPopUpClient()}
+                    </div>
+                </div>
+
                 <div className="containerForm">
                     <form  className="formRegister">
-                            
-                        <div className="rowfilds">
-                            <input type="text" name="search" className="fieldForm "  value={this.state.search} onChange={this.changeSearch} placeholder="Buscar"/>                     
-                            <button type="button" className="searchForm" onClick={() => {this.getAllClients();if (this.state.clients.length) {this.togglePopupClient(!this.state.showPopUpClient); }}}>BUSCAR</button>
-                        {this.createContentPopUpClient()}
-                        </div>
                         <p className="titleForm">Registrar cliente</p>
                         <div className="rowfilds">
                             <input type="text" name="firstName" className="fieldForm"  value={this.state.firstName} onChange={this.changeFirstName} placeholder="Nombre"/>                     
@@ -347,7 +365,7 @@ export default class Register  extends React.Component{
                         <p className="message">{this.getMessage(true)}</p>
                     </form>
                 </div>
-            
+            </div>
         );
     }
 }
